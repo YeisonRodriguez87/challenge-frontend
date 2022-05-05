@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export default function Card({ name, year, price, photo }) {
   return (
     <>

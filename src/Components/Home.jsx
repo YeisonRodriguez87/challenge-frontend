@@ -8,6 +8,9 @@ import {
   priceAndYearOrder,
 } from "../Redux/Actions";
 import Card from "./Card";
+import Menu from "./Menu";
+import Footer from "./Footer";
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -46,45 +49,54 @@ export default function Home() {
 
   return (
     <>
+      <Menu />
       <div>
-        <h1>Descubrí todos los modelos</h1>
-        <label>Filtrar por</label>
-        <button
-          onClick={(e) => {
-            handleAllModels(e);
-          }}>
-          Todos
-        </button>
-        <button
-          onClick={(e) => {
-            handleFilterAutos(e);
-          }}>
-          Autos
-        </button>
-        <button
-          onClick={(e) => {
-            handleFilterPickups(e);
-          }}>
-          Pickups y Comerciales
-        </button>
-        <button
-          onClick={(e) => {
-            handleFilterSuvs(e);
-          }}>
-          SUVs y Crossovers
-        </button>
+        <h1>Descubrí todos los modelos</h1>        
+        <div>
+          <label>Filtrar por</label>
+          <button
+            className= {styles.btn}
+            onClick={(e) => {
+              handleAllModels(e);
+            }}>
+            Todos
+          </button>
+          <button
+            className= {styles.btn}
+            onClick={(e) => {
+              handleFilterAutos(e);
+            }}>
+            Autos
+          </button>
+          <button
+            className= {styles.btn}
+            onClick={(e) => {
+              handleFilterPickups(e);
+            }}>
+            Pickups y Comerciales
+          </button>
+          <button
+            className= {styles.btn}
+            onClick={(e) => {
+              handleFilterSuvs(e);
+            }}>
+            SUVs y Crossovers
+          </button>
+        </div>
       </div>
       <div>
-        <select
-          onChange={(e) => {
-            handleOrder(e);
-          }}>
-          <option>Nada</option>
-          <option value='minprice'>De menor a mayor precio</option>
-          <option value='maxprice'>De mayor a menor precio</option>
-          <option value='masnuevo'>Más nuevos primero</option>
-          <option value='masviejo'>Más viejos primero</option>
-        </select>
+        <div>
+          <select
+            onChange={(e) => {
+              handleOrder(e);
+            }}>
+            <option>Nada</option>
+            <option value='minprice'>De menor a mayor precio</option>
+            <option value='maxprice'>De mayor a menor precio</option>
+            <option value='masnuevo'>Más nuevos primero</option>
+            <option value='masviejo'>Más viejos primero</option>
+          </select>
+        </div>
         {allModels?.map((el, index) => {
           return (
             <div key={index}>
@@ -98,6 +110,7 @@ export default function Home() {
           );
         })}
       </div>
+      <Footer />
     </>
   );
 }
