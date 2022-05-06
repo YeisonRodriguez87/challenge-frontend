@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -7,10 +9,10 @@ import {
   filterAutos,
   priceAndYearOrder,
 } from "../Redux/Actions";
+import styles from "./styles/Home.module.css";
 import Card from "./Card";
 import Menu from "./Menu";
 import Footer from "./Footer";
-import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -50,43 +52,42 @@ export default function Home() {
   return (
     <>
       <Menu />
-      <div>
-        <h1>Descubrí todos los modelos</h1>        
-        <div>
-          <label>Filtrar por</label>
-          <button
-            className= {styles.btn}
-            onClick={(e) => {
-              handleAllModels(e);
-            }}>
-            Todos
-          </button>
-          <button
-            className= {styles.btn}
-            onClick={(e) => {
-              handleFilterAutos(e);
-            }}>
-            Autos
-          </button>
-          <button
-            className= {styles.btn}
-            onClick={(e) => {
-              handleFilterPickups(e);
-            }}>
-            Pickups y Comerciales
-          </button>
-          <button
-            className= {styles.btn}
-            onClick={(e) => {
-              handleFilterSuvs(e);
-            }}>
-            SUVs y Crossovers
-          </button>
-        </div>
-      </div>
-      <div>
-        <div>
+      <div className={styles.divContainer}>
+        <h1 className={styles.h1}>Descubrí todos los modelos</h1>
+        <div className={styles.divButtons1}>
+          <div className={styles.divButtons2}>
+            <p className={styles.p}>Filtrar por</p>
+            <button
+              className={styles.btn}
+              onClick={(e) => {
+                handleAllModels(e);
+              }}>
+              Todos
+            </button>
+            <button
+              className={styles.btn}
+              onClick={(e) => {
+                handleFilterAutos(e);
+              }}>
+              Autos
+            </button>
+            <button
+              className={styles.btn}
+              onClick={(e) => {
+                handleFilterPickups(e);
+              }}>
+              Pickups y Comerciales
+            </button>
+            <button
+              className={styles.btn}
+              onClick={(e) => {
+                handleFilterSuvs(e);
+              }}>
+              SUVs y Crossovers
+            </button>
+          </div>
           <select
+            className={styles.sel}
             onChange={(e) => {
               handleOrder(e);
             }}>
@@ -97,19 +98,20 @@ export default function Home() {
             <option value='masviejo'>Más viejos primero</option>
           </select>
         </div>
-        {allModels?.map((el, index) => {
-          return (
-            <div key={index}>
-              <Card
-                name={el.name}
-                year={el.year}
-                price={el.price}
-                photo={el.photo}
-              />
-            </div>
-          );
-        })}
       </div>
+      <hr></hr>
+      {allModels?.map((el, index) => {
+        return (
+          <div key={index}>
+            <Card
+              name={el.name}
+              year={el.year}
+              price={el.price}
+              photo={el.photo}
+            />
+          </div>
+        );
+      })}
       <Footer />
     </>
   );

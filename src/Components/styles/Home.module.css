@@ -1,0 +1,71 @@
+.divContainer{
+    background-color: blue;
+}
+
+.h1{
+    width: 699px;
+    height: 57px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 57px;
+    letter-spacing: -1px;
+    color: #373737;
+    background-color: rgb(14, 235, 14);
+}
+
+.divButtons1{
+    display: flex;
+    justify-content: space-between;   
+    gap: 2rem;   
+    padding: 8px;
+    width: 100%;
+    background-color: rgb(236, 11, 150);
+}
+
+.divButtons2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+
+.p{    
+    width: 230px;
+    height: 14px;    
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.07875px;
+    color: #373737;
+}
+
+.btn{
+    height: 31px;
+    left: 0px;
+    right: 462px;
+    top: 0px;
+    background: #F7F7F7;
+    border-radius: 18px; 
+    border: none;
+    color: #373737; 
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.07875px;
+}
+
+.btn:hover{
+    background: #e0d8d8;    
+}
+
+.sel{
+    background-color: red; 
+}
+
+
+
+

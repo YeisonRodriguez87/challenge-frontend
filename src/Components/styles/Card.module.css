@@ -1,0 +1,27 @@
+.h2{
+    height: 30px;      
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: -0.653333px;
+    color: #000000;
+}
+
+.p{
+    height: 17px;       
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: -0.28px;    
+    color: #191919; 
+}
+
+.image{
+    width: 250px;
+    height: 190px;
+}
