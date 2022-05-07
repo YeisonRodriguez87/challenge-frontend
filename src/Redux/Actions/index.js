@@ -5,6 +5,7 @@ import {
   FILTER_SUVS,
   FILTER_AUTOS,
   PRICE_AND_YEAR_ORDER,
+  MODEL_DETAIL
 } from "./type";
 
 export function getModels() {
@@ -46,4 +47,18 @@ export function priceAndYearOrder(payload) {
     type: PRICE_AND_YEAR_ORDER,
     payload,
   };
+}
+
+export function detailModel(id){
+  return async function(distpach){
+  try {
+      const modelId = await axios.get(`https://challenge.agenciaego.tech/api/models/${id}`);
+      return distpach({
+          type: MODEL_DETAIL,
+          payload: modelId.data
+      })
+  } catch (error) {
+      return(error)
+  }        
+  }
 }

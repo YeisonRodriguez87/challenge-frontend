@@ -1,6 +1,7 @@
 const initialState = {
   models: [],
   allModels: [],
+  details: []
 };
 
 function rootReducer(state = initialState, action) {
@@ -39,7 +40,7 @@ function rootReducer(state = initialState, action) {
         ...state,
         models: autosFiltered,
       };
-    case "PRICE_AND_YEAR_ORDER":
+    case "PRICE_AND_YEAR_ORDER":     
       action.payload === "minprice" &&
         state.models.sort(function (a, b) {
           return a.price - b.price;
@@ -60,7 +61,11 @@ function rootReducer(state = initialState, action) {
         ...state,
         models: state.models,
       };
-
+    case "MODEL_DETAIL":
+      return{
+        ...state,
+        details: action.payload  
+      }
     default:
       return { ...state };
   }

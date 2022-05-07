@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -11,7 +9,7 @@ import {
 } from "../Redux/Actions";
 import styles from "./styles/Home.module.css";
 import Card from "./Card";
-import Menu from "./Menu";
+import NavBar from "./NavBar";
 import Footer from "./Footer";
 
 export default function Home() {
@@ -51,7 +49,7 @@ export default function Home() {
 
   return (
     <>
-      <Menu />
+      <NavBar />
       <div className={styles.divContainer}>
         <h1 className={styles.h1}>Descubrí todos los modelos</h1>
         <div className={styles.divButtons1}>
@@ -91,7 +89,7 @@ export default function Home() {
             onChange={(e) => {
               handleOrder(e);
             }}>
-            <option>Nada</option>
+            <option>Ordenar por</option>
             <option value='minprice'>De menor a mayor precio</option>
             <option value='maxprice'>De mayor a menor precio</option>
             <option value='masnuevo'>Más nuevos primero</option>
@@ -99,19 +97,21 @@ export default function Home() {
           </select>
         </div>
       </div>
-      <hr></hr>
-      {allModels?.map((el, index) => {
-        return (
-          <div key={index}>
-            <Card
-              name={el.name}
-              year={el.year}
-              price={el.price}
-              photo={el.photo}
-            />
-          </div>
-        );
-      })}
+      <hr className={styles.hr}/>
+      <div className={styles.divCards}>
+        {allModels?.map((el, index) => {
+          return (
+            <div key={index}>
+              <Card
+                name={el.name}
+                year={el.year}
+                price={el.price}
+                photo={el.photo}
+              />
+            </div>
+          );
+        })}
+      </div>
       <Footer />
     </>
   );

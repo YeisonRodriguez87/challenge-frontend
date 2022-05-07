@@ -1,0 +1,46 @@
+.divContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divLogo{
+    display: flex;
+    justify-content: space-between;   
+    gap: 2rem;   
+    padding: 8px;
+}
+
+.p{
+    width: 61px;
+    height: 17px;
+    left: calc(50% - 61px/2 - 80.46px);
+    top: calc(50% - 17px/2 - 13px);
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #191919;
+}
+
+.span{
+    height: 17px;
+    left: 92.78%;
+    right: 4.38%;
+    top: calc(50% - 17px/2 + 0.5px);
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #191919;
+}
+
+.hr{
+    left: 100%;
+    right: -0.07%;
+    top: 98.57%;
+    bottom: -2057.14%;
+    background: #CCCCCC;
+    opacity: 0.4;
+}
+

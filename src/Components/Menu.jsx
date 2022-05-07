@@ -1,14 +1,17 @@
-import React from 'react'
-import logo from "../images/logo.png";
+import React from 'react';
+import styles from "./styles/Menu.modules.css";
 
 export default function Menu() {
   return (
     <>
+      <span>Menú</span>
       <div>
-        <img src={logo} alt="logo" draggable="false" width='40px' heigth='40px'/>
-        <p>Modelos</p>      
-      </div>      
+        <div className= {styles.linea1}></div>
+        <div className= {styles.linea2}></div>
+        <div className= {styles.linea3}></div>
+      </div>       
     </>
   )
 }
+
 

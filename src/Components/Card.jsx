@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles/Card.module.css";
+import { Link } from "react-router-dom";
 
 export default function Card({ name, year, price, photo }) {
   return (
@@ -11,8 +12,11 @@ export default function Card({ name, year, price, photo }) {
         </p>
       </div>
       <div>
-        <img className={styles.image} src={photo} alt='Img not found'/>
+        <img className={styles.image} src={photo} alt='Img not found' />
       </div>
+      <Link to='/:id'>
+        <button>Ver Modelo</button>
+      </Link>
     </>
   );
 }
