@@ -11,14 +11,21 @@ import styles from "./styles/Home.module.css";
 import Card from "./Card";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import Loading from './Loading';
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const dispatch = useDispatch();
   const allModels = useSelector((state) => state.models);
   const [, /*order*/ setOrder] = useState("");
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
+    setLoader(true);
     dispatch(getModels());
+    setTimeout(() => {
+      setLoader(false);
+  }, 1000);
   }, [dispatch]);
 
   function handleAllModels(e) {
@@ -97,18 +104,27 @@ export default function Home() {
           </select>
         </div>
       </div>
-      <hr className={styles.hr}/>
+      <hr className={styles.hr} />
       <div className={styles.divCards}>
-        {allModels?.map((el, index) => {
+        {
+        loader ? (
+          <Loading />
+      ) :
+        allModels?.map((el, index) => {
           return (
-            <div key={index}>
-              <Card
-                name={el.name}
-                year={el.year}
-                price={el.price}
-                photo={el.photo}
-              />
-            </div>
+            <>
+              <div key={index}>
+                <Card
+                  name={el.name}
+                  year={el.year}
+                  price={el.price}
+                  photo={el.photo}
+                />
+                <Link to={"/" + el.id}>
+                  <button className={styles.btnmodel}>Ver Modelo</button>
+                </Link>
+              </div>
+            </>
           );
         })}
       </div>

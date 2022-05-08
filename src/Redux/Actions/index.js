@@ -5,18 +5,18 @@ import {
   FILTER_SUVS,
   FILTER_AUTOS,
   PRICE_AND_YEAR_ORDER,
-  MODEL_DETAIL
+  MODEL_DETAIL,
 } from "./type";
 
 export function getModels() {
   return async function (distpach) {
     try {
-      const countriesJson = await axios.get(
+      const models = await axios.get(
         "https://challenge.agenciaego.tech/api/models/"
       );
       return distpach({
         type: GET_MODELS,
-        payload: countriesJson.data,
+        payload: models.data,
       });
     } catch (error) {
       return error;
@@ -49,16 +49,18 @@ export function priceAndYearOrder(payload) {
   };
 }
 
-export function detailModel(id){
-  return async function(distpach){
-  try {
-      const modelId = await axios.get(`https://challenge.agenciaego.tech/api/models/${id}`);
+export function detailModel(id) {
+  return async function (distpach) {
+    try {
+      const modelId = await axios.get(
+        `https://challenge.agenciaego.tech/api/models/${id}`
+      );
       return distpach({
-          type: MODEL_DETAIL,
-          payload: modelId.data
-      })
-  } catch (error) {
-      return(error)
-  }        
-  }
+        type: MODEL_DETAIL,
+        payload: modelId.data,
+      });
+    } catch (error) {
+      return error;
+    }
+  };
 }

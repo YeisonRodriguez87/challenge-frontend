@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { detailModel } from "../Redux/Actions";
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-//import styles from './Details.module.css'
+import styles from './styles/Details.module.css'
 
 export default function Details() {
   const dispatch = useDispatch();
@@ -17,43 +17,49 @@ export default function Details() {
 
   return (
     <>
-      <NavBar />
-      <div>
-        <div>
-          <img src={detailsModel.photo} alt='img' />
-          <h3>{detailsModel.name}</h3>
-          <h1>{detailsModel.title}</h1>
+      <NavBar />     
+      <div className= {styles.divContainer}>
+        <div className= {styles.div1}>
+          <div>
+            <img src={detailsModel.photo} alt='img' />
+          </div>
+          <div>
+            <p className= {styles.p1}>{detailsModel.name}</p>
+            <p className= {styles.p2}>{detailsModel.title}</p>
+            <p className= {styles.p3}>Lorem ipsum dolor sit amet consectetur adipisicing elit. At cum repellat laudantium nulla nemo? Itaque, provident quibusdam dolor enim, dicta perferendis doloribus inventore veniam consectetur, ut reiciendis corrupti qui temporibus.</p>
+          </div>
         </div>
-        <div>
+        <div className= {styles.div2}>
           {detailsModel.model_features?.map((element, index) => {
             return (
               <>
                 <div key={index}>
-                  <img src={element.image} alt='img' />
-                  <h3>{element.name}</h3>
-                  <p>{element.description}</p>
+                  <img className= {styles.image} src={element.image} alt='img' />
+                  <p className= {styles.pName}>{element.name}</p>
+                  <p className= {styles.pDescription}>{element.description}</p>
                 </div>
               </>
             );
           })}
         </div>
-        <div>
+        <div className= {styles.div3}>
           {detailsModel.model_highlights?.map((element, index) => {
-            return (
+            return (            
               <>
-                <div key={index}>
-                  <h3>{element.title}</h3>
-                  <p>{element.content}</p>
-                  <img src={element.image} alt='img' />
-                </div>
+                <div key={index} className={index % 2 === 0? styles.leftHighlights: styles.rightHighlights}>
+                  <div className={styles.divContainerHighlights}>
+                    <p className= {styles.pTitle}>{element.title}</p>
+                    <p className= {styles.pContent}>{element.content}</p>
+                  </div>
+                  <div>
+                    <img className= {styles.image2} src={element.image} alt='img' />
+                  </div>
+                </div>            
               </>
             );
           })}
         </div>
       </div>
-      <Link to='/'>
-        <button>Regresar</button>
-      </Link>
       <Footer />
     </>
   );
