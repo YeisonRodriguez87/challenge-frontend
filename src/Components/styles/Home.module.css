@@ -108,13 +108,14 @@
 
 
 
-@media (max-width: 576px) {
+@media (max-width: 540px) {
     .h1{
         width: 345px;
         height: 88px;
         font-weight: 700;
         font-size: 35px;
-        line-height: 44px; 
+        line-height: 44px;
+        letter-spacing: -0.7px;  
         text-align: left;
     }
 
