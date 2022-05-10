@@ -31,29 +31,28 @@
 }
 
 .p{    
-    width: 14.375rem;
-    height: 0.875rem;    
     font-family: 'Montserrat';
     font-weight: 600;
     font-size: 0.875rem;
     line-height: 0.875rem;
-    letter-spacing: 0.0.005rem;
     color: #373737;
+    padding-right: 30px;
+    padding-left: 10px;
 }
 
 .btn{
-    height: 1.938rem;
-    right: 28.875rem;
     border-radius: 1.125rem; 
     border: none;
     color: #373737; 
     font-family: 'Montserrat';
     font-weight: 25rem;
     font-size: 0.875rem;
-    line-height: 0.875rem;
+    padding-left: 20px;
     text-align: center;
-    letter-spacing: 0.005rem;
+    align-items:center;
     cursor: pointer;
+    padding-right: 20px;
+    margin: 5px;
 }
 
 .btn:hover{
