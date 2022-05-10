@@ -26,4 +26,6 @@ Luego, ejecute el comando npm install desde la carpeta en la que clonó el repos
 #### Tecnologías usadas:
 - [ ] React
 - [ ] Redux
-- [ ] CSS
+- [ ] CSS Modules
+- [ ] Styled Components
+- [ ] React Icons
