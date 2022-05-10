@@ -7,7 +7,7 @@ export default function Footer() {
     <>
       <div className= {styles.divFooter}>
         <p className= {styles.p}>
-            Hecho con <span>&#128147;</span> por Yeison Rodríguez{" "}
+            Hecho con &#128147; por Yeison Rodríguez{" "}
             {new Date().getFullYear()}
         </p>      
       </div>      

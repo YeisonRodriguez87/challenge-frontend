@@ -44,7 +44,6 @@
 .btn{
     height: 1.938rem;
     right: 28.875rem;
-    background: #F7F7F7;
     border-radius: 1.125rem; 
     border: none;
     color: #373737; 
@@ -109,16 +108,23 @@
 
 
 
-@media (max-width: 540px) {
+@media (max-width: 576px) {
     .h1{
         width: 345px;
         height: 88px;
-        font-family: 'Montserrat';
-        font-style: normal;
         font-weight: 700;
         font-size: 35px;
-        line-height: 44px;
-        letter-spacing: -0.7px;  
+        line-height: 44px; 
+        text-align: left;
     }
+
+    .divButtons1{
+        display: flex;
+        justify-content: flex-start;     
+        padding: 0;
+        margin: 0;
+    }
+
+
 }
 
